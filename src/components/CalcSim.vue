@@ -18,10 +18,11 @@
         <hr>
         <div>
             <button @click="addInt('+')">+</button>
-            <button @click="addInt('+')">-</button>
-            <button @click="addInt('+')">*</button>
-            <button @click="addInt('+')">/</button>
+            <button @click="addInt('-')">-</button>
+            <button @click="addInt('*')">*</button>
+            <button @click="addInt('/')">/</button>
             <button @click="calc">=</button>
+            <button @click="clear">C</button>
         </div>
     </div>
 </template>
@@ -46,6 +47,11 @@ export default {
         calc() {
             const nok = this.prevNum.toString() + this.currentNum.toString();
             this.currentNum = eval(nok).toString();
+            this.prevNum = '';
+        },
+        clear() {
+            this.currentNum = '';
+            this.prevNum = '';
         }
     }
 }
