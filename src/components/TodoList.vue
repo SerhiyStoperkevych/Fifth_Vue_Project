@@ -88,8 +88,8 @@ export default {
     handleUpdate() {
       const todoIndex = this.todos.findIndex(todo => todo.id === this.currentTodoId);
       if (todoIndex !== -1) {
-        this.todos[todoIndex].editTitle = this.inputTitle;
-        this.todos[todoIndex].editDescription = this.inputDescription;
+        this.todos[todoIndex].title = this.editTitle;
+        this.todos[todoIndex].description = this.editDescription;
         this.resetForm();
       }
     },
